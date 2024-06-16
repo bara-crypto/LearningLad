@@ -28,7 +28,7 @@
             color:white;
 
             display:grid;
-            grid-template-columns: 1fr 3.5fr;
+            grid-template-columns: repeat(auto-fit,1fr);
             align-items: center;
             margin-bottom:30px;     /*align nav bar slightly down*/
         }
@@ -36,7 +36,7 @@
                     /*HEADING BAR*/
 
         .heading{
-            place-self: center;
+            text-align:left;
         }
 
                     /*LOGO*/
@@ -269,8 +269,9 @@
     <div class="main_bar">
         <h2 class="heading">Learning Lad</h2>
         <img src="Logo.png" alt="logo" class="logo">
-<!--         <input type="name" id="search" placeholder="Search" maxlength="7">
+<!--    <input type="name" id="search" placeholder="Search" maxlength="7">
         <a href="#"><i class="fa fa-search" id="searchlogo" style="font-size:3vmin; color:rgb(157, 224, 236);"></i></a> -->
+        
     </div>
 
     <div class="content">
