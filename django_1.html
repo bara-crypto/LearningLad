@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="django introduction" content="Django Introduction">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Introduction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+        *{
+            padding:0px;
+            margin:0px;
+        }
+                /* CLASS OF HEADING AND LOGO AND SEARCH*/
+        .main_bar{
+            font-family: "M PLUS Rounded 1c", sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            background-color:#2D2D2D;
+            color:white;
+
+            display:grid;
+            grid-template-columns: 1fr 3.5fr 1fr;
+            align-items: center;
+            margin-bottom:30px;     /*align nav bar slightly down*/
+        }
+
+                    /*HEADING BAR*/
+
+        .heading{
+            place-self: center;
+        }
+
+                    /*LOGO*/
+        .logo{
+            height:9vmin;
+            width: 9vmin;
+
+        }
+                /*SEARCH BUTTON*/
+
+        #search{
+            width:18.5vw;
+            padding:7px;
+            text-indent: 10px;
+            background-color: rgb(253, 253, 253);
+            color:rgb(0, 0, 0);
+            font-size:1em;
+            border-radius: 30px;
+            margin-right:5vw;
+        }
+                   
+
+
+        .nav{
+            display:flex;
+            flex-direction: row;
+            justify-content:space-around;
+            justify-self: center;
+            width:75%;
+            height:7vmin;
+            margin-left: 10vw;
+            border-radius: 50px;
+
+            background-color: #2B2E29;
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .same{
+            color:white;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            width:10em;
+            height:100%;
+            text-align: center;
+            align-content: center;
+            font-weight: 600;
+            border-radius: 50px;
+
+            transition-property: background-color;
+            transition-duration: 0.6s;
+        }
+
+                                                /*PLACE HOLDER*/
+         #search::placeholder{
+            color:rgba(9, 9, 9, 0.771);
+        }
+                                                /*Hover of Nav Bars*/
+        .same:hover
+        {
+            background-color: rgb(65,105,225);
+        }
+        .background_set
+        {
+            background-color: rgb(65,105,255);
+        }
+
+        .background_reset
+        {
+            background-color: #2B2E29;
+        }
+
+        .box_cont{
+            width:100%;
+            height:150px;
+            
+
+            display:grid;
+            grid-template-columns: repeat(auto-fit,2fr);
+        }
+
+
+        .item{
+            display: none;
+            
+        }
+
+        .items_display
+        {
+            display:block;
+
+            background-color: rgba(0, 0, 0, 0.636);
+            border-radius: 17px;
+            justify-items:center;
+            align-content:flex-start;
+            padding:8px;
+        }
+
+        #one
+        {
+            box-sizing: border-box;
+            border:4px solid rgb(255, 255, 255);
+            box-shadow: 5px 5px 0.8px rgb(76, 71, 71);
+            overflow: hidden;
+            margin: 0px;
+            padding:0px;
+
+            
+            
+        }
+
+        #four
+        {
+            color:white;
+
+            align-content: center;
+            font-family: "Space Grotesk", sans-serif;
+
+            
+        }
+
+        .homeimage
+        {
+            mix-blend-mode:hard-light;
+            background-color: #000000;
+        }
+
+
+    
+    /*-----------------------------------------------ABOUT ID DROP DOWN TEXT DECORATION-----------------------------------------------------------*/
+        .nav_list{
+            
+            list-style: none;
+            text-indent: 2.5vw;
+
+            display:grid;
+            grid-template-rows: 32px 32px 32px;
+            align-items: center;
+
+
+        }
+
+        .nav_orientated
+        {
+            text-decoration: none;
+            color:rgb(255, 255, 255);
+            cursor:pointer;
+            text-transform:capitalize;
+            font-family: "M PLUS Rounded 1c", sans-serif;
+        }
+
+    /*--------------------------------------------------------------------------------------------------------------------------------------------*/
+
+    .content
+    {
+        width:100%;
+        position:relative; 
+        bottom:100px;
+    } 
+
+
+    .end
+    {
+        position: relative;
+        top:100px;
+        background-color: black;
+
+    }
+    .comment_box
+    {
+        width:100%;
+
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #email,#name
+    {
+        width:50vw;
+        height:50px;
+        background-color: rgb(255, 255, 255);
+        color:black;
+        mix-blend-mode: hard-light;
+        text-indent: 5px;
+        line-height: 25px;
+        border-radius: 15px;
+    }
+    #comment_area
+    {
+        width:50vw;
+        height:200px;
+        background-color: rgb(255, 255, 255);
+        color:black;
+        mix-blend-mode: hard-light;
+        text-indent: 5px;
+        line-height: 25px;
+        border-radius: 15px;
+
+    
+    }
+
+
+
+    .submitbutton
+    {
+        width:125px;
+        height:50px;
+        
+        background-color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        letter-spacing: 1px;
+        border-radius: 30px;
+        text-align: center;
+        align-self: center;
+        margin-top:2vmin;
+        
+
+        
+    }
+
+    .contactinfo
+    {
+        color:white;
+        text-align: center;
+        margin:5vmin;
+        text-transform: uppercase;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+
+        margin-top: 15vmin;
+    }
+    .what
+    {
+        display:flex;
+        flex-direction: row;
+        place-content:center;
+        column-gap: 5em;
+    }
+
+    .what a
+    {
+        color:white;
+    }
+
+    .fa-whatsapp:hover,.fa-envelope:hover
+    {
+        color:rgb(16, 75, 225);
+    }
+
+    /*-------------------------------------------------------------Content style-----------------------------------------------------------------*/
+    .titlename
+    {
+        font-size: 5vmin;
+        font-weight: 700;
+        font-family: "Ubuntu", sans-serif;
+
+        text-transform: uppercase;
+        text-align: start;
+
+        margin:5vmin;
+    }
+
+    .subtitle
+    {
+        font-size:3vmin;
+        font-weight: 700;
+        font-family: "Ubuntu", sans-serif;
+
+        text-transform: uppercase;
+        text-align: start;
+
+        margin:5vmin;
+    }
+
+    .listofcontent
+    {
+        width:90vw;
+        height: fit-content;
+        list-style:circle;
+
+        margin:8.5vmin;
+        
+    }
+
+    .li-content
+    {
+        font-size: 2.5vmin;
+        font-weight: 500;
+
+        text-align: justify;
+
+        margin:1.5vmin;
+    }
+
+    .decorate
+    {
+        font-weight: 800;
+        text-align: center;
+        margin: 1.5vmin;
+        
+    }
+
+    .extra-1
+    {
+        margin-right:7vw;
+    }
+    .extra-2
+    {
+        margin-right: 10vw;
+    }
+
+    .container-1,.container-2
+    {
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+
+        justify-items: center;
+        align-items: center;
+        
+    }
+
+    .col-2
+    {
+        font-size: 2.5vmin;
+        font-weight: 500;
+
+        text-align: justify;
+
+        margin:1.5vmin;
+    }
+
+    .col-1
+    {
+
+        font-size: 2.5vmin;
+        font-weight: 500;
+
+        text-align: center;
+        margin:8.5vmin;
+        
+
+    }
+
+   
+
+    .container-3,.container-4
+    {
+        width:75%;
+        margin-left:8.5vmin;
+
+        line-height: 4vmin;
+
+        font-size: 2.5vmin;
+        
+        text-align: justify;
+
+    }
+
+    .each
+    {
+        font-weight: 900;
+    }
+
+    .picture_1_4
+    {
+        width:100%;
+        margin-top:2.5vmin;
+
+        display:grid;
+        place-content: center;
+
+
+    }
+
+    .container-4
+    {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+
+        margin-top: 8.5vmin;
+    }
+
+    .col-3
+    {
+        font-size: 2.5vmin;
+        font-weight: 500;
+
+    }
+
+    .picture_1_5
+    {
+        margin-left: 4vmin;
+    }
+
+    
+
+    
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="main_bar">
+        <h2 class="heading">Learning Lad</h2>
+        <img src="Logo.png" alt="logo" class="logo">
+        <input type="search" id="search" placeholder="Search">
+    </div>
+
+    <span class="nav">
+        <a href="homepage.html" class="same" id="home" target="_blank">Home</a>
+        <a href="mailto:j16052619@gmail.com" class="same" id="property"> Q  &  A </a>
+        <a href="#" class="same" id="about">Topics</a>
+        <a href="#" class="same" id="before">About</a>
+    </span>
+
+    <div class="box_cont">
+        <div class="item" id="one"><img src="picture_01_1.png" alt="picture of home page" class="homeimage"></div>
+        <div class="item" id="two"></div>
+        <div class="item" id="three">
+            <ol class="nav_list">
+                <li><a href="#" class="nav_orientated" onclick="later()">Django admin</a></li>
+                <li><a href="#" class="nav_orientated" onclick="later()">Get and Post</a></li>
+                <li><a href="#" class="nav_orientated" onclick="later()">Templates</a></li>
+            </ol>
+        </div>
+        <div class="item" id="four">Here, Writing a View and Mapping a url to it and Writing your first code snippet on django</div>
+    </div>
+
+    <div class="content">
+        <div class="titlename"> Web Development with Django</div>
+
+        <div class="subtitle">Writing a View and Mapping a URL to It</div>
+
+        <ol class="listofcontent">
+                <li class="li-content">Install Pycharm</li>
+                <li class="li-content">In PyCharm, expand the reviews folder in the project browser on the left, then double-click the views.py file inside to open it. In the right (editor) pane in PyCharm.</li>
+                <li class="li-content">you should see the Django automatically generated placeholder text: <div class="decorate">from django.shortcuts import render<div class="decorate extra-1"># Create your views here.</div></li>
+        </ol>
+
+        <div class="container-1">
+                <img src="picture_1_2.png" alt="setup picture" class="image_1">
+                <div class="col-2">Remove this placeholder text from views.py and instead insert this content:<div class="decorate extra-2">from django.http import HttpResponse</div><div class="decorate">def index(request): return HttpResponse("Hello, world!")</div></div>   
+        </div>
+
+        <div class="container-2">
+            <div class="col-1">First, the HttpResponse class needs to be imported from django.http.Then, the view function returns an HttpResponse instance with the content we defined (Hello, world!):</div>
+            <img src="picture_1_3.png" alt="after setup"> 
+        </div>
+
+        <div class="subtitle">set up a URL map to the index view</div>
+
+        <ol class="container-3">
+            <li class="listofcontent-2">Expand the bookr directory in the Project pane, then open urls.py. Django has automatically generated this file.</li>
+            <li class="listofcontent-2">Import your views into the urls.py file, by adding this line after the other existing <div class="each">imports: import reviews.views</div></li>
+            <li class="listofcontent-2">Add a map to the index view to the urlpatterns list by adding a call to the path function with an empty string and a reference to the index function: <div class="each">urlpatterns = [path('admin/', admin.site.urls),\ path('', reviews.views.index)]</div></li>
+        </ol>
+        <div class="picture_1_4"><img src="picture_1_4.png" alt="picture of adding url map"></div>
+
+        <div class="container-4">
+            <div class="col-3">Switch back to browser. The default welcome screen replaced with ,<span class="each"> Hello, world!: </span></div> 
+            <img src="picture_1_5.png" alt="default welcome screen" class="picture_1_5">
+        </div>
+
+
+    
+    <div class="end">
+
+        <br><br>
+        <form action="https://api.web3forms.com/submit" method="POST" class="comment_box">
+            <input type="hidden" name="access_key" value="8a7eae3b-bc71-4bdb-9066-4d5670ef1028">
+            <input type="name" id="name" placeholder="Name"><br>
+            <input type="email" name="email" id="email" placeholder="Email*" required><br>
+            <textarea name="textarea" id="comment_area" placeholder="Comment*" required></textarea>
+            <button type="submit" class="submitbutton" id="button">Submit</button>
+        </form>
+
+        <div style="color:rgb(255, 255, 255)" class="contactinfo">Contact Us:</div>
+
+        <div class="what">
+            <a href="https://wa.me/9894138765"><i class="fa fa-whatsapp" style="font-size:36px"></i></a>
+            <a href="mailto:j16052619@gmail.com"><i class="fa fa-envelope" style="font-size:33px"></i></a>
+        </div>
+    </div> 
+
+    
+
+
+
+
+
+
+<script>
+const body=document.querySelector('body');
+
+let first=document.querySelector('#one');
+let second=document.querySelector('#two');
+let third=document.querySelector('#three');
+let fourth=document.querySelector('#four');
+
+/*---------------------------------------------------Nav bar elements------------------------------------------------------------------------*/
+
+let var1=document.querySelector('#home');
+let var2=document.querySelector('#property');
+let var3=document.querySelector('#about');
+let var4=document.querySelector('#before');
+
+const position_of_first=var1.getBoundingClientRect();
+const position_of_second=var2.getBoundingClientRect();
+const position_of_third=var3.getBoundingClientRect();
+const position_of_fourth=var4.getBoundingClientRect();
+
+const position_top_first=Math.floor(position_of_first.left+document.body.scrollLeft);
+const position_top_second=Math.floor(position_of_second.left+document.body.scrollLeft);
+const position_top_third=Math.floor(position_of_third.left+document.body.scrollLeft);
+const position_top_fourth=Math.floor(position_of_fourth.left+document.body.scrollLeft);
+
+
+/*
+document.querySelector('#home').addEventListener('click',(event)=>
+{
+    
+    var1.classList.toggle('background_set');
+
+    first.style.marginLeft=String(position_top_first/15.6)+'vw';
+    first.style.width='15vw';
+
+    var2.classList.remove('background_set');
+    var3.classList.remove('background_set');
+    var4.classList.remove('background_set');
+
+    first.classList.toggle('items_display');
+    first.classList.toggle('item');
+
+    second.classList.add('item');
+    third.classList.add('item');
+    fourth.classList.add('item');
+
+    second.classList.remove('items_display');
+    third.classList.remove('items_display');
+    fourth.classList.remove('items_display');
+});*/
+document.querySelector('#home').addEventListener('mouseover',(event)=>
+{
+    
+    var1.classList.add('background_set');
+
+    var2.classList.remove('background_set');
+    var3.classList.remove('background_set');
+    var4.classList.remove('background_set');
+
+    first.style.marginLeft=String(position_top_first/15.5)+'vw';
+    first.style.width='15vw';
+
+    first.classList.add('items_display');
+
+    second.classList.add('item');
+    third.classList.add('item');
+    fourth.classList.add('item');
+
+    second.classList.remove('items_display');
+    third.classList.remove('items_display');
+    fourth.classList.remove('items_display');
+});
+
+document.querySelector('#home').addEventListener('mouseout',(event)=>
+{
+    var1.classList.remove('background_set');
+
+    first.classList.remove('items_display');
+
+});
+
+document.querySelector('#property').addEventListener('click',(event)=>
+{
+
+    //second.style.marginLeft=String(position_top_second/15.5)+'vw';
+    //second.style.width='15vw';
+
+
+    var1.classList.remove('background_set');
+    var3.classList.remove('background_set');
+    var4.classList.remove('background_set');
+
+
+    first.classList.add('item');
+    third.classList.add('item');
+    fourth.classList.add('item');
+
+    first.classList.remove('items_display');
+    third.classList.remove('items_display');
+    fourth.classList.remove('items_display');
+});
+
+document.querySelector('#about').addEventListener('click',(event)=>
+{
+    var3.classList.toggle('background_set');
+
+    third.style.marginLeft=String(position_top_third/15.5)+'vw';
+    third.style.width='15vw';
+
+    var2.classList.remove('background_set');
+    var1.classList.remove('background_set');
+    var4.classList.remove('background_set');
+
+    third.classList.toggle('items_display');
+    third.classList.toggle('item');
+
+
+    second.classList.add('item');
+    first.classList.add('item');
+    fourth.classList.add('item');
+
+    second.classList.remove('items_display');
+    first.classList.remove('items_display');
+    fourth.classList.remove('items_display');
+});
+
+document.querySelector('#before').addEventListener('click',(event)=>
+{
+    var4.classList.toggle('background_set');
+
+    fourth.style.marginLeft=String(position_top_fourth/15.5)+'vw';
+    fourth.style.width='15vw';
+
+    var2.classList.remove('background_set');
+    var3.classList.remove('background_set');
+    var1.classList.remove('background_set');
+    
+    fourth.classList.toggle('items_display');
+    fourth.classList.toggle('item');
+
+    second.classList.add('item');
+    third.classList.add('item');
+    first.classList.add('item');
+
+    second.classList.remove('items_display');
+    third.classList.remove('items_display');
+    first.classList.remove('items_display');
+});
+
+
+function later()
+{
+    alert("Sorry, in progress");
+}
+
+
+
+
+    
+        
+    </script>
+</body>
+</html>
